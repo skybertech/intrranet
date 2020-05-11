@@ -67,6 +67,9 @@ sudo rm /etc/nginx/sites-enabled/default
 
 echo "Installed  Nginx"
 
+sudo apt-get install -y unzip
+
+
 echo "Install MariaDB"
 
 sudo apt install mariadb-server mariadb-client -y
@@ -96,8 +99,8 @@ timedatectl set-timezone Asia/Kolkata
 echo "Installing ProFTP"
 sudo apt install proftpd-basic -y 
 
-echo "Installing ZIP"
-apt install unzip
+#echo "Installing ZIP"
+#apt install unzip -y 
 
 #----------- Optimization ------------#
 echo "Some php.ini Tweaks"
