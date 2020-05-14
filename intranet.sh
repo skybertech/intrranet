@@ -305,6 +305,7 @@ sudo nginx -t
 sudo systemctl restart nginx.service
 
 # output
+local_ip=$(ip addr show | awk '$1 == "inet" && $3 == "brd" { sub (/\/.*/,""); print $2 }')
 
 echo ""
 echo "#############################################################################"
@@ -319,6 +320,11 @@ echo "#  OsTicket at  port 81												      #"
 echo "#  Moodle at Port 82													      #"
 echo "#  SeedDMS at Port 83													      #"
 echo "#  ITDB at Port 84													      #"
+echo "#   																	      #"
+echo "#   	To install the SeedDMS 	visit http://$local_ip:83/install/install.php #"
+echo "#   																	      #"
+echo "#  Mysql Username is dbadmin											      #"
+echo "#  Mysql Password is 	sULpXEm3N										      #"
 echo "#   																	      #"
 echo "#  For support contact riyasrawther.in@gmail.com						      #"
 echo "#############################################################################"
