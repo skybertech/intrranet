@@ -61,6 +61,10 @@ sudo fuser -cuk /var/cache/apt/archives/lock; sudo rm -f /var/cache/apt/archives
 # Update the repository location to US 
 curl https://repogen.simplylinux.ch/txt/bionic/sources_5d6f82baa5992eae0ab833bb6689d1d08908e8a7.txt | sudo tee /etc/apt/sources.list
 
+# MariaDB Preperation
+sudo apt-get install software-properties-common -y
+sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
+sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mirror.kku.ac.th/mariadb/repo/10.4/ubuntu bionic main'
 
 echo "Updating Linux"
 sudo apt-get update -y
@@ -200,7 +204,7 @@ git config --global user.name "Riyas Rawther"
 git config --global user.email "riyasrawther.in@gmail.com"
 # Download the full folder
 cd /tmp
-git clone https://github.com/riyas-rawther/intranet_apps_lemp.git
+git clone https://github.com/skybertech/intrranet.git
 
 cd /tmp/intranet_apps_lemp
 
@@ -290,9 +294,32 @@ sudo chmod -R 755 /var/www/
 sudo chown -R www-data /var/moodledata
 sudo chmod -R 0770 /var/moodledata
 
+#Cleanups
+rm /var/www/seeddms/seeddms-quickstart-5.1.13.tar.gz
+
 
 # test Nginx
 sudo nginx -t
 # Restart NGINX
 
 sudo systemctl restart nginx.service
+
+# output
+
+echo ""
+echo "#############################################################################"
+echo "#  The following applications has been installed					          #"
+echo "#  NGINX - Webserver							                              #"
+echo "#  MariaDB - Mysql Server												      #"
+echo "#  PhpMyadmin															      #"
+echo "#  Php 7.2															      #"
+echo "#  																	      #"
+echo "#  Internal Portal at port 80											      #"
+echo "#  OsTicket at  port 81												      #"
+echo "#  Moodle at Port 82													      #"
+echo "#  SeedDMS at Port 83													      #"
+echo "#  ITDB at Port 84													      #"
+echo "#   																	      #"
+echo "#  For support contact riyasrawther.in@gmail.com						      #"
+echo "#############################################################################"
+sleep 5
