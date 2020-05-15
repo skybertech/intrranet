@@ -206,7 +206,7 @@ git config --global user.email "riyasrawther.in@gmail.com"
 cd /tmp
 git clone https://github.com/skybertech/intrranet.git
 
-cd /tmp/intranet_apps_lemp
+cd /tmp/intrranet/
 
 sudo cp -p fixes/my.cnf /etc/mysql/my.cnf
 service mysql restart
@@ -259,7 +259,7 @@ chmod 0777 /var/moodledata
 
 mkdir -p -v /var/www/seeddms && cd /var/www/seeddms
 #wget https://liquidtelecom.dl.sourceforge.net/project/seeddms/seeddms-5.1.13/seeddms-quickstart-5.1.13.tar.gz
-mv /tmp/intranet_apps_lemp/apps/seeddms-quickstart-5.1.13.tar.gz .
+mv /tmp/intrranet/apps/seeddms-quickstart-5.1.13.tar.gz .
 sudo tar -xvzf  seeddms-quickstart-5.1.13.tar.gz
 sudo touch /var/www/seeddms/seeddms51x/conf/ENABLE_INSTALL_TOOL
 
@@ -328,6 +328,11 @@ echo "						"
 echo "Mysql Username is dbadmin"
 echo "Mysql Password is sULpXEm3N"
 echo "##"
+echo "The IP address of this system is @local_ip"
+echo "To Access Internal Portal visit $local_ip"
+echo "Other apps are installed from port 81 to 84. Example Moodle is available at port 81. To access it visit http://$local_ip:81"
+echo "**************************"
+echo "PhpMyadmin is available at $local_ip/phpmyadmin. Please login using dbadmin and password sULpXEm3N"
 echo "For support contact riyasrawther.in@gmail.com"
 echo "##################################"
 sleep 5
