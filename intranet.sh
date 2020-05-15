@@ -275,7 +275,7 @@ chown www-data /var/www/itdb/data; chmod u+w /var/www/itdb/data/
 chown www-data /var/www/itdb/data/files/; chmod u+w /var/www/itdb/data/files/
 
 
-cd /tmp/intranet_apps_lemp/nginx_vhosts
+cd /tmp/intrranet/nginx_vhosts
 # Move NGINX host files to sites Available
 mv phpmyadmin.conf /etc/nginx/snippets/
 mv * /etc/nginx/sites-available
